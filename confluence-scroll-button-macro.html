@@ -2,59 +2,59 @@
 <button id="scrollToTopButton" onclick="scrollToTop()">Переместиться наверх</button>
 
 <script>
-// Функция для прокрутки страницы наверх
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
+    // Функция для прокрутки страницы наверх
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }
 
-// Добавляем кнопку на страницу после ее загрузки
-window.addEventListener('load', () => {
-    const button = document.getElementById('scrollToTopButton');
-    const content = document.getElementById('content');
-    content.appendChild(button);  // Добавляем кнопку
-    // Скрываем кнопку, если страница сверху
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 100) {
-            button.style.display = 'block'; // Показываем кнопку, когда скролл > 100px
-        } else {
-            button.style.display = 'none';  // Скрываем кнопку, если на верху страницы
-        }
+    // Добавляем кнопку на страницу после ее загрузки
+    window.addEventListener("load", () => {
+        const button = document.getElementById("scrollToTopButton");
+        const content = document.getElementById("content");
+        content.appendChild(button); // Добавляем кнопку
+        // Скрываем кнопку, если страница сверху
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 100) {
+                button.style.display = "block"; // Показываем кнопку, когда скролл > 100px
+            } else {
+                button.style.display = "none"; // Скрываем кнопку, если на верху страницы
+            }
+        });
     });
-});
 </script>
 
 <style>
-/* Стиль кнопки "Переместиться наверх" */
-#scrollToTopButton {
-    font-weight: bold;
-    font-family: Arial, serif;
-    font-size: 14px;
-    text-align: center;
-    position: sticky;
-    background-color: #b9b9b9;
-    bottom: 25px;
-    top: 0;
-    left: 100%;
-    width: 160px;
-    height: 40px;
-    border-radius: 15px;
-    box-shadow: 0px 3px 5px #cacaca;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease;
-    display: none; /* Скрытая кнопка по умолчанию */
-}
+    /* Стиль кнопки "Переместиться наверх" */
+    #scrollToTopButton {
+        font-weight: bold;
+        font-family: Arial, serif;
+        font-size: 14px;
+        text-align: center;
+        position: sticky;
+        background-color: #b9b9b9;
+        bottom: 25px;
+        top: 0;
+        left: 100%;
+        width: 160px;
+        height: 40px;
+        border-radius: 15px;
+        box-shadow: 0px 3px 5px #cacaca;
+        cursor: pointer;
+        transition: box-shadow 0.3s ease;
+        display: none; /* Скрытая кнопка по умолчанию */
+    }
 
-/* Эффект при нажатии на кнопку */
-#scrollToTopButton:active {
-    top: 0.4em;
-    box-shadow: 0 0 0 60px rgba(206, 87, 142, 0.3) inset;
-}
+    /* Эффект при нажатии на кнопку */
+    #scrollToTopButton:active {
+        top: 0.4em;
+        box-shadow: 0 0 0 60px rgba(206, 87, 142, 0.3) inset;
+    }
 
-/* Эффект при наведении на кнопку */
-#scrollToTopButton:hover {
-    box-shadow: 0px 2px 15px 0px #717171;
-}
+    /* Эффект при наведении на кнопку */
+    #scrollToTopButton:hover {
+        box-shadow: 0px 2px 15px 0px #717171;
+    }
 </style>
